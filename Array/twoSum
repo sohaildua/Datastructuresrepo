@@ -1,0 +1,30 @@
+from typing import List
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        map = {}
+        for num,value in enumerate(nums):
+            
+            remaining_val = target - nums[num]
+            print(remaining_val)
+            if remaining_val in map:
+                print("heree")
+                print(num,map[remaining_val])
+                return [num, map[remaining_val]]
+            map[value] = num
+
+
+
+
+
+
+#Input: nums = [2,7,11,15], target = 9
+#Output: [0,1]
+
+nums = [2,7,11,15]
+target = 9
+sol = Solution()
+
+print(sol.twoSum(nums, target))
+#Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
